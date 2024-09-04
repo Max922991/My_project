@@ -2,39 +2,22 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
     <parent>
         <groupId>org.example</groupId>
         <artifactId>My_project</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
+
     <artifactId>module_2</artifactId>
     <packaging>jar</packaging>
     <name>module_2</name>
     <url>http://maven.apache.org</url>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.test.skip>true</maven.test.skip>
     </properties>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.5.0</version>
-                <configuration>
-                    <skipTests>true</skipTests>
-                    <printSummary>true</printSummary>
-                    <properties>
-                        <property>
-                            <name>listener</name>
-                            <value>org.apache.maven.plugin.surefire.report.ConsoleOutputReporter</value>
-                        </property>
-                    </properties>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 
     <dependencies>
         <dependency>
@@ -44,4 +27,5 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
 </project>
