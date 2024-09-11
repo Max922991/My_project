@@ -35,20 +35,34 @@
         <maven.compiler.source>22</maven.compiler.source>
         <maven.compiler.target>22</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <skipTests>false</skipTests>
     </properties>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.5.0</version>
-                <configuration>
-                    <skipTests>${skipTests}</skipTests>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+    <profiles>
+
+        <profile>
+            <id>skip-tests-db</id>
+            <properties>
+                <skip.tests.db>true</skip.tests.db>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>skip-tests-db-and-core</id>
+            <properties>
+                <skip.tests.db>true</skip.tests.db>
+                <skip.tests.core>true</skip.tests.core>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>skip-tests-common-and-core</id>
+            <properties>
+                <skip.tests.common>true</skip.tests.common>
+                <skip.tests.core>true</skip.tests.core>
+            </properties>
+        </profile>
+
+    </profiles>
+
 
 </project>
